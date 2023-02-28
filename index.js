@@ -37,3 +37,16 @@ inquirer
       message: "Enter the team manager's office number:",
     },
     ])
+    .then((answers) => {
+        // Create a new Manager object using the user's input
+        const manager = new Manager(
+          answers.name,
+          answers.id,
+          answers.email,
+          answers.officeNumber
+        );
+        // Add the manager to the teamMembers array
+        teamMembers.push(manager);
+        // Call function to prompt user for additional team members
+        addTeamMember();
+      });
