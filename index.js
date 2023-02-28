@@ -88,3 +88,16 @@ function addTeamMember() {
                 message: "Enter the Engineer's GitHub username:",
               },
             ])
+            .then((answers) => {
+                // Create a new Engineer object using the user's input
+                const engineer = new Engineer(
+                  answers.name,
+                  answers.id,
+                  answers.email,
+                  answers.github
+                );
+                // Add the engineer to the teamMembers array
+                teamMembers.push(engineer);
+                // Call function to prompt user for additional team members
+                addTeamMember();
+            });
