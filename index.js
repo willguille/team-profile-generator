@@ -148,4 +148,5 @@ function addTeamMember() {
                 console.log("Team profile generated successfully!");
             });
         }
-});
+    });
+}
