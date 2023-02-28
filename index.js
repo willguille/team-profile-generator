@@ -61,4 +61,30 @@ function addTeamMember() {
             message: "Which type of team member would you like to add?",
             choices: ["Engineer", "Intern", "I'm done adding team members"],
         },
-        ])
+    ])
+    .then((answer) => {
+        if (answer.type === "Engineer") {
+          // Prompt user for Engineer information
+          inquirer
+            .prompt([
+              {
+                type: "input",
+                name: "name",
+                message: "Enter the Engineer's name:",
+              },
+              {
+                type: "input",
+                name: "id",
+                message: "Enter the Engineer's ID:",
+              },
+              {
+                type: "input",
+                name: "email",
+                message: "Enter the Engineer's email:",
+              },
+              {
+                type: "input",
+                name: "github",
+                message: "Enter the Engineer's GitHub username:",
+              },
+            ])
