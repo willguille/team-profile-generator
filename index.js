@@ -126,3 +126,16 @@ function addTeamMember() {
                 message: "Enter the Intern's school:",
             },
             ])
+            .then((answers) => {
+                // Create a new Intern object using the user's input
+                const intern = new Intern(
+                  answers.name,
+                  answers.id,
+                  answers.email,
+                  answers.school
+                );
+                // Add the intern to the teamMembers array
+                teamMembers.push(intern);
+                // Call function to prompt user for additional team members
+                addTeamMember();
+              });
