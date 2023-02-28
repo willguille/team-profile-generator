@@ -101,3 +101,28 @@ function addTeamMember() {
                 // Call function to prompt user for additional team members
                 addTeamMember();
             });
+        } else if (answer.type === "Intern") {
+            // Prompt user for Intern information
+            inquirer
+            .prompt([
+            {
+                type: "input",
+                name: "name",
+                message: "Enter the Intern's name:",
+            },
+            {
+                type: "input",
+                name: "id",
+                message: "Enter the Intern's ID:",
+            },
+            {
+                type: "input",
+                name: "email",
+                message: "Enter the Intern's email:",
+            },
+            {
+                type: "input",
+                name: "school",
+                message: "Enter the Intern's school:",
+            },
+            ])
