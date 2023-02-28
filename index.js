@@ -49,4 +49,16 @@ inquirer
         teamMembers.push(manager);
         // Call function to prompt user for additional team members
         addTeamMember();
-      });
+    });
+
+function addTeamMember() {
+    // Prompt user to select an Engineer, Intern, or finish building the team
+    inquirer
+        .prompt([
+        {
+            type: "list",
+            name: "type",
+            message: "Which type of team member would you like to add?",
+            choices: ["Engineer", "Intern", "I'm done adding team members"],
+        },
+        ])
