@@ -139,3 +139,13 @@ function addTeamMember() {
                 // Call function to prompt user for additional team members
                 addTeamMember();
               });
+        } else {
+            // Generate HTML output using the teamMembers array and the render function
+            const html = render(teamMembers);
+            // Write the HTML output to the file at the specified outputPath
+            fs.writeFile(outputPath, html, (err) => {
+                if (err) throw err;
+                console.log("Team profile generated successfully!");
+            });
+        }
+});
